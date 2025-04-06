@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block sidebar_items %}
+<li class="nav-item">
+    <a href="{{baseaddress}}/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{baseaddress}}/overview/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Overview</span>
+    </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/kanban/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Kanban Board</span> </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/meeting-notes/" class="nav-link text-truncate link-secondary">
+        <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Meeting Notes</span></a>
+</li>
+<li>
+    <a href="{{baseaddress}}/groups/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Groups</span>
+    </a>
+</li>
+{% endblock %}
+
+{% block header_items %}
+<li><a href="{{baseaddress}}/" class="nav-link px-2 link-dark">Home</a></li>
+<li><a href="{{baseaddress}}/overview/" class="nav-link px-2 link-dark">Overview</a></li>
+<li><a href="{{baseaddress}}/kanban/" class="nav-link px-2 link-dark">Kanban Board</a></li>
+<li><a href="{{baseaddress}}/meeting-notes/" class="nav-link px-2 link-secondary">Meeting Notes</a></li>
+<li><a href="{{baseaddress}}/groups/" class="nav-link px-2 link-dark">Groups</a></li>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid kanban-container">
+        <header class="mb-4">
+            <div class="row">
+                <div class="col-7">
+                    <h5 class="board-title">Meeting Notes</h5>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                Select Project
+                            </label>
+                            <select class="form-control" style="text-wrap:inherit;">
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>
+                                Select Group
+                            </label>
+                            <select class="form-control" style="text-wrap:inherit;">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="kanban-board d-flex overflow-auto">
+            <table class="table table-dark meeting-notes-table" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Project</th>
+                        <th>Group</th>
+                        <th>Meeting Date</th>
+                        <th>Transcript</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

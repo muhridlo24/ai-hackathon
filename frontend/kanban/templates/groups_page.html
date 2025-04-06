@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block sidebar_items %}
+<li class="nav-item">
+    <a href="{{baseaddress}}/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{baseaddress}}/overview/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Overview</span>
+    </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/kanban/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Kanban Board</span> </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/meeting-notes/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Meeting Notes</span></a>
+</li>
+<li>
+    <a href="{{baseaddress}}/groups/" class="nav-link text-truncate link-secondary">
+        <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Groups</span>
+    </a>
+</li>
+{% endblock %}
+
+{% block header_items %}
+<li><a href="{{baseaddress}}/" class="nav-link px-2 link-dark">Home</a></li>
+<li><a href="{{baseaddress}}/overview/" class="nav-link px-2 link-dark">Overview</a></li>
+<li><a href="{{baseaddress}}/kanban/" class="nav-link px-2 link-dark">Kanban Board</a></li>
+<li><a href="{{baseaddress}}/meeting-notes/" class="nav-link px-2 link-dark">Meeting Notes</a></li>
+<li><a href="{{baseaddress}}/groups/" class="nav-link px-2 link-secondary">Groups</a></li>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid kanban-container">
+        <header class="mb-4">
+            <div class="row">
+                <div class="col-7">
+                    <h5 class="board-title">Groups and Projects</h5>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary button-create-group">
+                                Create New Group
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary button-create-project">
+                                Create New Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="kanban-board overflow-auto">
+            <h6>
+                Group List
+            </h6>
+            <div class="mb-4">
+                <div class="card card-body card-group-list">
+                </div>
+            </div>
+            <h6>
+                Project List
+            </h6>
+            <div class="mb-5">
+                <div class="card card-body card-project-list">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

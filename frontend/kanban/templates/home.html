@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block style %}
+<style>
+</style>
+{% endblock %}
+
+{% block sidebar_items %}
+<li class="nav-item">
+    <a href="{{baseaddress}}/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{baseaddress}}/overview/" class="nav-link text-truncate link-secondary">
+        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Overview</span>
+    </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/kanban/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Kanban Board</span> </a>
+</li>
+<li>
+    <a href="{{baseaddress}}/meeting-notes/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Meeting Notes</span></a>
+</li>
+<li>
+    <a href="{{baseaddress}}/groups/" class="nav-link text-truncate link-dark">
+        <i class="fs-5 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Groups</span>
+    </a>
+</li>
+{% endblock %}
+
+{% block header_items %}
+<li><a href="{{baseaddress}}/" class="nav-link px-2 link-dark">Home</a></li>
+<li><a href="{{baseaddress}}/overview/" class="nav-link px-2 link-secondary">Overview</a></li>
+<li><a href="{{baseaddress}}/kanban/" class="nav-link px-2 link-dark">Kanban Board</a></li>
+<li><a href="{{baseaddress}}/meeting-notes/" class="nav-link px-2 link-dark">Meeting Notes</a></li>
+<li><a href="{{baseaddress}}/groups/" class="nav-link px-2 link-dark">Groups</a></li>
+{% endblock %}
+
+{% block body %}
+<main role="main">
+    <div class="container-fluid kanban-container">
+        <h5 class="board-title mb-5">Overview</h5>
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron mb-5 min-vh-50">
+          <div class="container min-vh-50">
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                  <div class="h-100 p-5 text-white bg-dark rounded-3">
+                      
+                      <h6>
+                          Your Tasks
+                      </h6>
+                      <div class="card card-body min-vh-50 tasks-list-overview">
+                      </div>
+                    <!-- <h2>Change the background</h2>
+                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+                    <button class="btn btn-outline-light" type="button">Example button</button> -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="h-100 p-5 bg-light border rounded-3">
+                      <h6>
+                          Your Groups
+                      </h6>
+                      <div class="card card-body min-vh-50 group-list-overview">
+                      </div>
+                    <!-- <h2>Add borders</h2>
+                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                    <button class="btn btn-outline-secondary" type="button">Example button</button> -->
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+  </main>
+
+{% endblock %}
