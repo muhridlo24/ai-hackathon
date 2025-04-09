@@ -141,19 +141,21 @@
                         </div>
                     </div>
                     <div class="task-list inprogress-list" data-column="inprogress">
-                        <!-- <div class="task card" draggable="true">
-                            <div class="card-body">
-                                <h5 class="card-title">Implement API</h5>
-                                <p class="card-text">Build REST endpoints</p>
-                                <div class="task-footer">
-                                    <span class="badge bg-warning">Medium</span>
-                                    <div class="task-actions">
-                                        <i class="bi bi-pencil edit-task"></i>
-                                        <i class="bi bi-trash delete-task"></i>
+                        {% for task_item in task_list %}
+                            <div class="task card" draggable="true">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{task_item.task_title}}/h5>
+                                    <p class="card-text">{{ task_item.description }}</p>
+                                    <div class="task-footer">
+                                        <span class="badge bg-warning">Medium</span>
+                                        <div class="task-actions">
+                                            <i class="bi bi-pencil edit-task"></i>
+                                            <i class="bi bi-trash delete-task"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        {% endfor %}
                     </div>
                     <button class="btn btn-light add-task-btn w-100 mt-2">
                         <i class="bi bi-plus"></i> Add Task
