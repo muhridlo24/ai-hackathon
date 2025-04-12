@@ -28,6 +28,7 @@ class meeting_notes_db(models.Model):
     id = models.AutoField(primary_key=True)
     group_id = models.ForeignKey(group_list_db,to_field='id',on_delete=models.DO_NOTHING)
     project_id = models.ForeignKey(project_list_db,to_field='id',on_delete=models.DO_NOTHING)
+    meeting_title = models.TextField(blank=True)
     meeting_date = models.DateField(blank=True)
     log = models.TextField(blank=True)
     notes = models.TextField(blank=True)
